@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		792E92EF1E08CB4D001FDB04 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E92EE1E08CB4D001FDB04 /* UIColorExtensions.swift */; };
 		7983CD641E07CC9D0050C6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983CD631E07CC9D0050C6A3 /* AppDelegate.swift */; };
 		7983CD661E07CC9D0050C6A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983CD651E07CC9D0050C6A3 /* ViewController.swift */; };
 		7983CD691E07CC9D0050C6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7983CD671E07CC9D0050C6A3 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		792E92EE1E08CB4D001FDB04 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		7983CD601E07CC9D0050C6A3 /* Ripple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ripple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7983CD631E07CC9D0050C6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7983CD651E07CC9D0050C6A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		792E92ED1E08CB3E001FDB04 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				792E92EE1E08CB4D001FDB04 /* UIColorExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		7983CD571E07CC9D0050C6A3 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 		7983CD621E07CC9D0050C6A3 /* Ripple */ = {
 			isa = PBXGroup;
 			children = (
+				792E92ED1E08CB3E001FDB04 /* Extensions */,
 				7983CD631E07CC9D0050C6A3 /* AppDelegate.swift */,
 				7983CD651E07CC9D0050C6A3 /* ViewController.swift */,
 				7983CD671E07CC9D0050C6A3 /* Main.storyboard */,
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				792E92EF1E08CB4D001FDB04 /* UIColorExtensions.swift in Sources */,
 				7983CD661E07CC9D0050C6A3 /* ViewController.swift in Sources */,
 				7983CD641E07CC9D0050C6A3 /* AppDelegate.swift in Sources */,
 			);
@@ -302,6 +314,7 @@
 				7983CD741E07CC9D0050C6A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
