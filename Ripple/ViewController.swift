@@ -16,8 +16,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.rippleGrey
-        
-        let size: CGFloat = 40
+        configureView()
+   }
+    
+    func configureView() {
+        let size: CGFloat = 60
         circleView.frame = CGRect(x: view.bounds.width/2 - size/2, y: view.bounds.height/2 - size/2, width: size, height: size)
         circleView.layer.cornerRadius = size/2
         circleView.layer.borderColor = UIColor.rippleGreen.cgColor
@@ -30,7 +33,7 @@ class ViewController: UIViewController {
         dotView.alpha = 0.7
         view.addSubview(circleView)
         start()
-   }
+    }
     
     func start() {
         UIView.animate(withDuration: 5, delay: 0, options: [], animations: {
@@ -42,16 +45,16 @@ class ViewController: UIViewController {
     }
     
     func shrinkCircle() {
-        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in
-            self.dotView.removeFromSuperview()
-        })
+        Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(removeDotView), userInfo: nil, repeats: false)
         UIView.animate(withDuration: 5, delay: 1.5, options: [], animations: {
             self.circleView.transform = self.circleView.transform.scaledBy(x: 1/5, y: 1/5)
         }, completion: { _ in
-            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (timer) in
-                self.start()
-            })
+            Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.start), userInfo: nil, repeats: false)
         })
+    }
+    
+    func removeDotView() {
+        self.dotView.removeFromSuperview()
     }
     
     override func didReceiveMemoryWarning() {
