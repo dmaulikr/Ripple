@@ -9,7 +9,7 @@
 import UIKit
 
 open class RippleViewController: UIViewController {
-
+    
     var circleView = UIView(frame: CGRect.zero)
     var dotView = UIView(frame: CGRect.zero)
     open var circleSize: CGFloat = 55
@@ -36,19 +36,32 @@ open class RippleViewController: UIViewController {
     
     func configureView() {
         view.backgroundColor = backgroundColor ?? UIColor.rippleGrey
-        circleView.frame = CGRect(x: view.bounds.width/2 - circleSize/2, y: view.bounds.height/2 - circleSize/2, width: circleSize, height: circleSize)
-        circleView.layer.cornerRadius = circleSize/2
-        circleView.layer.borderColor = UIColor.rippleGreen.cgColor
-        circleView.layer.borderWidth = 1
         
-        dotView.frame = CGRect(x: view.bounds.width/2 - dotSize/2, y: view.bounds.height/2 - dotSize/2, width: dotSize, height: dotSize)
-        dotView.layer.cornerRadius = dotSize/2
-        dotView.backgroundColor = UIColor.rippleGreen
-        dotView.alpha = 0.7
-        view.addSubview(circleView)
-        view.addSubview(dotView)
-        dotView.isHidden = true
+        self.circleView.frame = CGRect(x: view.bounds.width/2 - circleSize/2, y: view.bounds.height/2 - circleSize/2, width: circleSize, height: circleSize)
+        self.circleView.bounds = CGRect(x: 0, y: 0, width: circleSize, height: circleSize)
+        self.circleView.layer.cornerRadius = circleSize/2
+        self.circleView.layer.borderColor = UIColor.rippleGreen.cgColor
+        self.circleView.layer.borderWidth = 1
+        addCenterConstraints(centerView: self.circleView)
+        
+        self.dotView.frame = CGRect(x: view.bounds.width/2 - dotSize/2, y: view.bounds.height/2 - dotSize/2, width: dotSize, height: dotSize)
+        self.dotView.layer.cornerRadius = dotSize/2
+        self.dotView.backgroundColor = UIColor.rippleGreen
+        self.dotView.alpha = 0.7
+        self.dotView.isHidden = true
+        addCenterConstraints(centerView: self.dotView)
         start()
+    }
+    
+    func addCenterConstraints(centerView: UIView) {
+        self.view.addSubview(centerView)
+        centerView.translatesAutoresizingMaskIntoConstraints = false
+        let centerXContraint = NSLayoutConstraint(item: centerView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0)
+        let centerYContraint = NSLayoutConstraint(item: centerView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 0)
+        let widthContraint = NSLayoutConstraint(item: centerView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: centerView.bounds.width)
+        let heightConstraint = NSLayoutConstraint(item: centerView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: centerView.bounds.width)
+        
+        NSLayoutConstraint.activate([centerXContraint, centerYContraint, widthContraint, heightConstraint])
     }
     
     func start() {
@@ -77,7 +90,7 @@ open class RippleViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

@@ -11,6 +11,7 @@ import RippleKit
 
 class AppViewController: RippleViewController {
 
+    @IBOutlet weak var circleView: UIView!
     /*
     // MARK: - Navigation
 
