@@ -8,25 +8,38 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+open class RippleViewController: UIViewController {
 
     var circleView = UIView(frame: CGRect.zero)
     var dotView = UIView(frame: CGRect.zero)
+    open var circleSize: CGFloat = 55
+    open var dotSize: CGFloat = 6
+    open var backgroundColor: UIColor?
     
-    override func viewDidLoad() {
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override open func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.rippleGrey
+    }
+    
+    override open func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         configureView()
-   }
+    }
     
     func configureView() {
-        let size: CGFloat = 60
-        circleView.frame = CGRect(x: view.bounds.width/2 - size/2, y: view.bounds.height/2 - size/2, width: size, height: size)
-        circleView.layer.cornerRadius = size/2
+        view.backgroundColor = backgroundColor ?? UIColor.rippleGrey
+        circleView.frame = CGRect(x: view.bounds.width/2 - circleSize/2, y: view.bounds.height/2 - circleSize/2, width: circleSize, height: circleSize)
+        circleView.layer.cornerRadius = circleSize/2
         circleView.layer.borderColor = UIColor.rippleGreen.cgColor
         circleView.layer.borderWidth = 1
         
-        let dotSize: CGFloat = 4
         dotView.frame = CGRect(x: view.bounds.width/2 - dotSize/2, y: view.bounds.height/2 - dotSize/2, width: dotSize, height: dotSize)
         dotView.layer.cornerRadius = dotSize/2
         dotView.backgroundColor = UIColor.rippleGreen
@@ -57,7 +70,7 @@ class ViewController: UIViewController {
         self.dotView.removeFromSuperview()
     }
     
-    override func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

@@ -4,15 +4,35 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Ripple Widget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Ripple.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>RippleKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>7983CD5F1E07CC9D0050C6A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>79BAF0221E0913D60067B85A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>79BAF0341E0915770067B85A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
