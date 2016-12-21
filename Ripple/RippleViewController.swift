@@ -26,6 +26,7 @@ open class RippleViewController: UIViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(hideDotView), name: .UIApplicationWillEnterForeground, object: nil)
     }
     
     override open func viewDidAppear(_ animated: Bool) {
@@ -45,20 +46,22 @@ open class RippleViewController: UIViewController {
         dotView.backgroundColor = UIColor.rippleGreen
         dotView.alpha = 0.7
         view.addSubview(circleView)
+        view.addSubview(dotView)
+        dotView.isHidden = true
         start()
     }
     
     func start() {
-        UIView.animate(withDuration: 5, delay: 0, options: [], animations: {
+        UIView.animate(withDuration: 4, delay: 0, options: [], animations: {
             self.circleView.transform = self.circleView.transform.scaledBy(x: 5, y: 5)
         }, completion: { _ in
-            self.view.addSubview(self.dotView)
+            self.dotView.isHidden = false
             self.shrinkCircle()
         })
     }
     
     func shrinkCircle() {
-        Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(removeDotView), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(hideDotView), userInfo: nil, repeats: false)
         UIView.animate(withDuration: 5, delay: 1.5, options: [], animations: {
             self.circleView.transform = self.circleView.transform.scaledBy(x: 1/5, y: 1/5)
         }, completion: { _ in
@@ -66,8 +69,8 @@ open class RippleViewController: UIViewController {
         })
     }
     
-    func removeDotView() {
-        self.dotView.removeFromSuperview()
+    func hideDotView() {
+        self.dotView.isHidden = true
     }
     
     override open func didReceiveMemoryWarning() {
