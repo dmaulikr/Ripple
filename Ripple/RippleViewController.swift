@@ -35,6 +35,10 @@ open class RippleViewController: UIViewController {
     }
     
     func configureView() {
+        guard !self.view.subviews.contains(self.circleView) else {
+            return
+        }
+//        self.preferredContentSize = CGSize(width: view.bounds.width, height: view.bounds.height)
         view.backgroundColor = backgroundColor ?? UIColor.rippleGrey
         
         self.circleView.frame = CGRect(x: view.bounds.width/2 - circleSize/2, y: view.bounds.height/2 - circleSize/2, width: circleSize, height: circleSize)

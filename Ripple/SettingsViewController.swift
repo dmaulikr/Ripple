@@ -1,0 +1,23 @@
+//
+//  SettingsViewController.swift
+//  Ripple
+//
+//  Created by Keith Lee on 12/22/16.
+//  Copyright © 2016 Keith Lee. All rights reserved.
+//
+
+import UIKit
+
+class SettingsViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
