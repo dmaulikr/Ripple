@@ -47,14 +47,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYM-fW-rg8">
-                                <rect key="frame" x="159" y="304" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Settings"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxw-V2-Oqg">
+                                <rect key="frame" x="110" y="116" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cIU-kF-3B9">
+                                <rect key="frame" x="215" y="111" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleNight:" destination="mBK-f6-SnI" eventType="valueChanged" id="SCk-6x-jpB"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rxw-V2-Oqg" firstAttribute="top" secondItem="iHN-Dd-KoC" secondAttribute="bottom" constant="96" id="S2e-Mj-M7C"/>
+                            <constraint firstItem="Rxw-V2-Oqg" firstAttribute="centerX" secondItem="9S5-Er-lW9" secondAttribute="centerX" constant="-30" id="Tdq-eS-VII"/>
+                            <constraint firstItem="cIU-kF-3B9" firstAttribute="leading" secondItem="Rxw-V2-Oqg" secondAttribute="trailing" constant="10" id="ahk-jL-Cys"/>
+                            <constraint firstItem="cIU-kF-3B9" firstAttribute="centerY" secondItem="Rxw-V2-Oqg" secondAttribute="centerY" id="nun-9R-CJa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nightThemeLabel" destination="Rxw-V2-Oqg" id="UsJ-T8-Mtk"/>
+                        <outlet property="nightThemeSwitch" destination="cIU-kF-3B9" id="Uvp-k3-WNa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0NE-M9-XIW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

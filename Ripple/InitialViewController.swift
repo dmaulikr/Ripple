@@ -16,6 +16,7 @@ class InitialViewController: UIViewController {
         super.viewDidLoad()
         self.pageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
+        updateTheme()
         
         if let firstViewController = orderedViewControllers.first {
             self.pageViewController.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
@@ -26,7 +27,13 @@ class InitialViewController: UIViewController {
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMove(toParentViewController: self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTheme), name: Notification.Name(nightThemeChangedNotificationId), object: nil)
 
+    }
+    
+    func updateTheme() {
+        self.pageViewController.view.backgroundColor = UserDefaults.standard.bool(forKey: nightThemeKey) ? UIColor.rippleNight : UIColor.rippleGrey
     }
 
     override func didReceiveMemoryWarning() {

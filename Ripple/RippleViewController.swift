@@ -27,10 +27,12 @@ open class RippleViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(hideDotView), name: .UIApplicationWillEnterForeground, object: nil)
+        view.backgroundColor = backgroundColor ?? UIColor.rippleGrey
     }
     
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //Needs to be in appear for widget bounds to be accurate
         configureView()
     }
     
@@ -38,8 +40,6 @@ open class RippleViewController: UIViewController {
         guard !self.view.subviews.contains(self.circleView) else {
             return
         }
-//        self.preferredContentSize = CGSize(width: view.bounds.width, height: view.bounds.height)
-        view.backgroundColor = backgroundColor ?? UIColor.rippleGrey
         
         self.circleView.frame = CGRect(x: view.bounds.width/2 - circleSize/2, y: view.bounds.height/2 - circleSize/2, width: circleSize, height: circleSize)
         self.circleView.bounds = CGRect(x: 0, y: 0, width: circleSize, height: circleSize)
