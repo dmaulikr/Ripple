@@ -59,9 +59,56 @@
                                     <action selector="toggleNight:" destination="mBK-f6-SnI" eventType="valueChanged" id="SCk-6x-jpB"/>
                                 </connections>
                             </switch>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dUV-f8-g32">
+                                <rect key="frame" x="63" y="209" width="250" height="250"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AU0-yp-fxK">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="125"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cJ-dr-uVB" customClass="DashedCircleView" customModule="Ripple" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUx-QF-LH3" customClass="DashedCircleView" customModule="Ripple" customModuleProvider="target">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="125"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="3cJ-dr-uVB" firstAttribute="width" secondItem="QUx-QF-LH3" secondAttribute="width" id="pG5-3P-sX1"/>
+                                            <constraint firstItem="3cJ-dr-uVB" firstAttribute="height" secondItem="QUx-QF-LH3" secondAttribute="height" id="sPL-nM-cIF"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Tp-50-vIH">
+                                        <rect key="frame" x="0.0" y="125" width="250" height="125"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPb-eg-pQL" customClass="DashedCircleView" customModule="Ripple" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsm-Hf-5C9" customClass="DashedCircleView" customModule="Ripple" customModuleProvider="target">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="125"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fsm-Hf-5C9" firstAttribute="width" secondItem="DPb-eg-pQL" secondAttribute="width" id="5J8-Ha-lLP"/>
+                                            <constraint firstItem="fsm-Hf-5C9" firstAttribute="height" secondItem="DPb-eg-pQL" secondAttribute="height" id="Y0X-gu-LCK"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="AU0-yp-fxK" firstAttribute="width" secondItem="1Tp-50-vIH" secondAttribute="width" id="3iT-z7-LBe"/>
+                                    <constraint firstAttribute="height" constant="250" id="XFV-BS-wNq"/>
+                                    <constraint firstItem="AU0-yp-fxK" firstAttribute="height" secondItem="1Tp-50-vIH" secondAttribute="height" id="dWB-aT-1Hk"/>
+                                    <constraint firstAttribute="width" constant="250" id="e0e-wM-T9k"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dUV-f8-g32" firstAttribute="centerX" secondItem="9S5-Er-lW9" secondAttribute="centerX" id="1TN-ku-9RC"/>
+                            <constraint firstItem="dUV-f8-g32" firstAttribute="centerY" secondItem="9S5-Er-lW9" secondAttribute="centerY" id="9Oj-9b-dRW"/>
                             <constraint firstItem="Rxw-V2-Oqg" firstAttribute="top" secondItem="iHN-Dd-KoC" secondAttribute="bottom" constant="96" id="S2e-Mj-M7C"/>
                             <constraint firstItem="Rxw-V2-Oqg" firstAttribute="centerX" secondItem="9S5-Er-lW9" secondAttribute="centerX" constant="-30" id="Tdq-eS-VII"/>
                             <constraint firstItem="cIU-kF-3B9" firstAttribute="leading" secondItem="Rxw-V2-Oqg" secondAttribute="trailing" constant="10" id="ahk-jL-Cys"/>
@@ -69,6 +116,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="colorChooser" destination="dUV-f8-g32" id="uwT-J8-YOD"/>
+                        <outlet property="colorView1" destination="3cJ-dr-uVB" id="eoS-dR-x6Z"/>
+                        <outlet property="colorView2" destination="QUx-QF-LH3" id="Tqt-tt-MWo"/>
+                        <outlet property="colorView3" destination="DPb-eg-pQL" id="Qg2-AN-76i"/>
+                        <outlet property="colorView4" destination="fsm-Hf-5C9" id="30L-i6-HIE"/>
                         <outlet property="nightThemeLabel" destination="Rxw-V2-Oqg" id="UsJ-T8-Mtk"/>
                         <outlet property="nightThemeSwitch" destination="cIU-kF-3B9" id="Uvp-k3-WNa"/>
                     </connections>

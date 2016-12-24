@@ -8,10 +8,12 @@
 
 import UIKit
 
+let circleColorKey = "circleColor"
+let circleColorChangedNotificationId = "com.KeithLee.circleColorChanged"
 open class RippleViewController: UIViewController {
     
-    var circleView = UIView(frame: CGRect.zero)
-    var dotView = UIView(frame: CGRect.zero)
+    open var circleView = UIView(frame: CGRect.zero)
+    open var dotView = UIView(frame: CGRect.zero)
     open var circleSize: CGFloat = 55
     open var dotSize: CGFloat = 6
     open var backgroundColor: UIColor?
@@ -26,7 +28,6 @@ open class RippleViewController: UIViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(hideDotView), name: .UIApplicationWillEnterForeground, object: nil)
         view.backgroundColor = backgroundColor ?? UIColor.rippleGrey
     }
     
@@ -41,16 +42,18 @@ open class RippleViewController: UIViewController {
             return
         }
         
+        let color = UserDefaults.standard.colorForKey(key: circleColorKey) ?? UIColor.rippleGreen
+        
         self.circleView.frame = CGRect(x: view.bounds.width/2 - circleSize/2, y: view.bounds.height/2 - circleSize/2, width: circleSize, height: circleSize)
         self.circleView.bounds = CGRect(x: 0, y: 0, width: circleSize, height: circleSize)
         self.circleView.layer.cornerRadius = circleSize/2
-        self.circleView.layer.borderColor = UIColor.rippleGreen.cgColor
+        self.circleView.layer.borderColor = color.cgColor
         self.circleView.layer.borderWidth = 1
         addCenterConstraints(centerView: self.circleView)
         
         self.dotView.frame = CGRect(x: view.bounds.width/2 - dotSize/2, y: view.bounds.height/2 - dotSize/2, width: dotSize, height: dotSize)
         self.dotView.layer.cornerRadius = dotSize/2
-        self.dotView.backgroundColor = UIColor.rippleGreen
+        self.dotView.backgroundColor = color
         self.dotView.alpha = 0.7
         self.dotView.isHidden = true
         addCenterConstraints(centerView: self.dotView)

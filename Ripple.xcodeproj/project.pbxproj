@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		790B9BE61E0BD5B4001A4FA8 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B9BE51E0BD5B4001A4FA8 /* InitialViewController.swift */; };
 		790B9BE91E0BD8D6001A4FA8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B9BE81E0BD8D6001A4FA8 /* SettingsViewController.swift */; };
+		79429A9C1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79429A9B1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift */; };
 		7983CD641E07CC9D0050C6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983CD631E07CC9D0050C6A3 /* AppDelegate.swift */; };
 		7983CD691E07CC9D0050C6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7983CD671E07CC9D0050C6A3 /* Main.storyboard */; };
 		7983CD6B1E07CC9D0050C6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7983CD6A1E07CC9D0050C6A3 /* Assets.xcassets */; };
 		7983CD6E1E07CC9D0050C6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7983CD6C1E07CC9D0050C6A3 /* LaunchScreen.storyboard */; };
+		798CF3441E0DEDAB006BDBE1 /* DashedCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798CF3431E0DEDAB006BDBE1 /* DashedCircleView.swift */; };
 		79BAF0271E0913D60067B85A /* RippleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 79BAF0251E0913D60067B85A /* RippleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		79BAF02A1E0913D60067B85A /* RippleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BAF0231E0913D60067B85A /* RippleKit.framework */; };
 		79BAF02B1E0913D60067B85A /* RippleKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79BAF0231E0913D60067B85A /* RippleKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -72,6 +74,7 @@
 		790B9BE51E0BD5B4001A4FA8 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		790B9BE81E0BD8D6001A4FA8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		792E92EE1E08CB4D001FDB04 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		79429A9B1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		7983CD601E07CC9D0050C6A3 /* Ripple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ripple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7983CD631E07CC9D0050C6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7983CD651E07CC9D0050C6A3 /* RippleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RippleViewController.swift; path = ../Ripple/RippleViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 		7983CD6A1E07CC9D0050C6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7983CD6D1E07CC9D0050C6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7983CD6F1E07CC9D0050C6A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		798CF3431E0DEDAB006BDBE1 /* DashedCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashedCircleView.swift; sourceTree = "<group>"; };
 		79BAF0231E0913D60067B85A /* RippleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RippleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79BAF0251E0913D60067B85A /* RippleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RippleKit.h; sourceTree = "<group>"; };
 		79BAF0261E0913D60067B85A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				792E92EE1E08CB4D001FDB04 /* UIColorExtensions.swift */,
+				79429A9B1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift */,
 			);
 			name = Extensions;
 			path = ../Ripple;
@@ -164,11 +169,20 @@
 				7983CD631E07CC9D0050C6A3 /* AppDelegate.swift */,
 				7983CD671E07CC9D0050C6A3 /* Main.storyboard */,
 				790B9BE71E0BD793001A4FA8 /* View Controllers */,
+				798CF3431E0DEDAB006BDBE1 /* DashedCircleView.swift */,
+				798CF3451E0DEFFB006BDBE1 /* Supporting Files */,
+			);
+			path = Ripple;
+			sourceTree = "<group>";
+		};
+		798CF3451E0DEFFB006BDBE1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				7983CD6A1E07CC9D0050C6A3 /* Assets.xcassets */,
 				7983CD6C1E07CC9D0050C6A3 /* LaunchScreen.storyboard */,
 				7983CD6F1E07CC9D0050C6A3 /* Info.plist */,
 			);
-			path = Ripple;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		79BAF0241E0913D60067B85A /* RippleKit */ = {
@@ -351,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				790B9BE61E0BD5B4001A4FA8 /* InitialViewController.swift in Sources */,
+				798CF3441E0DEDAB006BDBE1 /* DashedCircleView.swift in Sources */,
 				79BAF04A1E0A0DE60067B85A /* AppViewController.swift in Sources */,
 				7983CD641E07CC9D0050C6A3 /* AppDelegate.swift in Sources */,
 				790B9BE91E0BD8D6001A4FA8 /* SettingsViewController.swift in Sources */,
@@ -363,6 +378,7 @@
 			files = (
 				79BAF0481E0A0DB90067B85A /* RippleViewController.swift in Sources */,
 				79BAF0301E09143F0067B85A /* UIColorExtensions.swift in Sources */,
+				79429A9C1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
