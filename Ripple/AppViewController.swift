@@ -24,7 +24,7 @@ class AppViewController: RippleViewController {
     func updateCircleColor() {
         let color = UserDefaults.standard.colorForKey(key: circleColorKey) ?? UIColor.rippleGreen
         self.circleView.layer.borderColor = color.cgColor
-        self.dotView.layer.borderColor = color.cgColor
+        self.dotView.backgroundColor = color
     }
 }
 
