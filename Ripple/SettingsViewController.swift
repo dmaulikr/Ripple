@@ -22,12 +22,33 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var colorView4: DashedCircleView!
     
     var colorViewArray: [DashedCircleView]!
+    var colorViewDict = [Int : Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         colorViewArray = [colorView1, colorView2, colorView3, colorView4]
-        
+        colorViewDict = [
+            UIColor.rippleGreen.hashValue : 0,
+            UIColor.rippleRed.hashValue : 1,
+            UIColor.rippleBlue.hashValue : 2,
+            UIColor.rippleBeige.hashValue : 3
+        ]
         colorViewArray.forEach({ $0.backgroundColor = UIColor.clear })
+        
+        if let color = UserDefaults.ripple?.colorForKey(key: circleColorKey) {
+            guard let index = colorViewDict[color.hashValue], index < colorViewArray.count else {
+                return
+            }
+            colorViewArray[index].fill = true
+        } else {
+            colorView1.fill = true
+        }
+        
+        colorView1.color = UIColor.rippleGreen
+        colorView2.color = UIColor.rippleRed
+        colorView3.color = UIColor.rippleBlue
+        colorView4.color = UIColor.rippleBeige
+        
         if UserDefaults.standard.bool(forKey: nightThemeKey) {
             nightThemeSwitch.isOn = true
             view.backgroundColor = UIColor.rippleNight
@@ -37,10 +58,6 @@ class SettingsViewController: UIViewController {
             view.backgroundColor = UIColor.rippleGrey
             self.nightThemeLabel.textColor = UIColor.black
         }
-        colorView1.color = UIColor.rippleGreen
-        colorView2.color = UIColor.rippleRed
-        colorView3.color = UIColor.rippleBlue
-        colorView4.color = UIColor.rippleFoundation
         
         let tapRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(fillCircle))
         let tapRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(fillCircle))

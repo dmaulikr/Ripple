@@ -20,10 +20,10 @@
          contextName = "TodayViewController.viewDidLoad() -&gt; ():TodayViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "contentView.bounds">
+               value = "view.bounds">
             </PersistentString>
             <PersistentString
-               value = "view.bounds">
+               value = "contentView.bounds">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -32,6 +32,14 @@
          <PersistentStrings>
             <PersistentString
                value = "UserDefaults.standard.bool(forKey: nightThemeKey)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SettingsViewController.viewDidLoad() -&gt; ():SettingsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = " colorViewDict[color]?.fill">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
