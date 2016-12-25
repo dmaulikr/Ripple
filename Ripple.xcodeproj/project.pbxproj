@@ -75,6 +75,8 @@
 		790B9BE81E0BD8D6001A4FA8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		792E92EE1E08CB4D001FDB04 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		79429A9B1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
+		79429A9D1E0E5DC500D0B9D6 /* Ripple.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ripple.entitlements; sourceTree = "<group>"; };
+		79429A9E1E0E5EA300D0B9D6 /* Ripple Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Ripple Widget.entitlements"; sourceTree = "<group>"; };
 		7983CD601E07CC9D0050C6A3 /* Ripple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ripple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7983CD631E07CC9D0050C6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7983CD651E07CC9D0050C6A3 /* RippleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RippleViewController.swift; path = ../Ripple/RippleViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		7983CD621E07CC9D0050C6A3 /* Ripple */ = {
 			isa = PBXGroup;
 			children = (
+				79429A9D1E0E5DC500D0B9D6 /* Ripple.entitlements */,
 				7983CD631E07CC9D0050C6A3 /* AppDelegate.swift */,
 				7983CD671E07CC9D0050C6A3 /* Main.storyboard */,
 				790B9BE71E0BD793001A4FA8 /* View Controllers */,
@@ -207,6 +210,7 @@
 		79BAF0391E0915770067B85A /* Ripple Widget */ = {
 			isa = PBXGroup;
 			children = (
+				79429A9E1E0E5EA300D0B9D6 /* Ripple Widget.entitlements */,
 				79BAF03A1E0915770067B85A /* TodayViewController.swift */,
 				79BAF03C1E0915770067B85A /* MainInterface.storyboard */,
 				79BAF03F1E0915770067B85A /* Info.plist */,
@@ -296,8 +300,13 @@
 				TargetAttributes = {
 					7983CD5F1E07CC9D0050C6A3 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 5K27PD58GS;
+						DevelopmentTeam = QGV37CRU79;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					79BAF0221E0913D60067B85A = {
 						CreatedOnToolsVersion = 8.1;
@@ -306,8 +315,13 @@
 					};
 					79BAF0341E0915770067B85A = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 5K27PD58GS;
+						DevelopmentTeam = QGV37CRU79;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -533,7 +547,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5K27PD58GS;
+				CODE_SIGN_ENTITLEMENTS = Ripple/Ripple.entitlements;
+				DEVELOPMENT_TEAM = QGV37CRU79;
 				INFOPLIST_FILE = Ripple/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -549,7 +564,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5K27PD58GS;
+				CODE_SIGN_ENTITLEMENTS = Ripple/Ripple.entitlements;
+				DEVELOPMENT_TEAM = QGV37CRU79;
 				INFOPLIST_FILE = Ripple/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -609,10 +625,11 @@
 		79BAF0441E0915770067B85A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 5K27PD58GS;
+				CODE_SIGN_ENTITLEMENTS = "Ripple Widget/Ripple Widget.entitlements";
+				DEVELOPMENT_TEAM = QGV37CRU79;
 				INFOPLIST_FILE = "Ripple Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.KeithLee.Ripple.Ripple-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = com.KeithLee.Ripple.Ripple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -622,10 +639,11 @@
 		79BAF0451E0915770067B85A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 5K27PD58GS;
+				CODE_SIGN_ENTITLEMENTS = "Ripple Widget/Ripple Widget.entitlements";
+				DEVELOPMENT_TEAM = QGV37CRU79;
 				INFOPLIST_FILE = "Ripple Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.KeithLee.Ripple.Ripple-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = com.KeithLee.Ripple.Ripple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

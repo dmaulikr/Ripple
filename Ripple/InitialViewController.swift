@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RippleKit
 
 class InitialViewController: UIViewController {
 
@@ -33,7 +34,7 @@ class InitialViewController: UIViewController {
     }
     
     func updateTheme() {
-        self.pageViewController.view.backgroundColor = UserDefaults.standard.bool(forKey: nightThemeKey) ? UIColor.rippleNight : UIColor.rippleGrey
+        self.pageViewController.view.backgroundColor = (UserDefaults.ripple?.bool(forKey: nightThemeKey) ?? false) ? UIColor.rippleNight : UIColor.rippleGrey
     }
 
     override func didReceiveMemoryWarning() {

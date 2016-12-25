@@ -27,4 +27,6 @@ extension UserDefaults {
         set(colorData, forKey: key)
     }
     
+    public static let ripple = UserDefaults(suiteName: "group.com.KeithLee.ripple")
+    
 }

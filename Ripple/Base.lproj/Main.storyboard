@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xaT-0h-8Ot">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="j4r-Xo-CBE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Jq-7L-lzY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -44,23 +44,23 @@
                         <viewControllerLayoutGuide type="bottom" id="Auu-6Q-mPZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9S5-Er-lW9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxw-V2-Oqg">
-                                <rect key="frame" x="110" y="116" width="95" height="21"/>
+                                <rect key="frame" x="256" y="116" width="95" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cIU-kF-3B9">
-                                <rect key="frame" x="215" y="111" width="51" height="31"/>
+                                <rect key="frame" x="361" y="111" width="51" height="31"/>
                                 <connections>
                                     <action selector="toggleNight:" destination="mBK-f6-SnI" eventType="valueChanged" id="SCk-6x-jpB"/>
                                 </connections>
                             </switch>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dUV-f8-g32">
-                                <rect key="frame" x="63" y="209" width="250" height="250"/>
+                                <rect key="frame" x="209" y="63" width="250" height="250"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AU0-yp-fxK">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="125"/>
@@ -138,7 +138,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99586588144302368" green="1" blue="0.9999271035194397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>

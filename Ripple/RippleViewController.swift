@@ -8,8 +8,11 @@
 
 import UIKit
 
-let circleColorKey = "circleColor"
-let circleColorChangedNotificationId = "com.KeithLee.circleColorChanged"
+public let nightThemeKey = "nightTheme"
+public let circleColorKey = "circleColor"
+public let nightThemeChangedNotificationId = "com.KeithLee.nightThemeChanged"
+public let circleColorChangedNotificationId = "com.KeithLee.circleColorChanged"
+
 open class RippleViewController: UIViewController {
     
     open var circleView = UIView(frame: CGRect.zero)
@@ -41,8 +44,7 @@ open class RippleViewController: UIViewController {
         guard !self.view.subviews.contains(self.circleView) else {
             return
         }
-        
-        let color = UserDefaults.standard.colorForKey(key: circleColorKey) ?? UIColor.rippleGreen
+        let color = UserDefaults.ripple?.colorForKey(key: circleColorKey) ?? UIColor.rippleGreen
         
         self.circleView.frame = CGRect(x: view.bounds.width/2 - circleSize/2, y: view.bounds.height/2 - circleSize/2, width: circleSize, height: circleSize)
         self.circleView.bounds = CGRect(x: 0, y: 0, width: circleSize, height: circleSize)

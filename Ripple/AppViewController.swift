@@ -19,10 +19,14 @@ class AppViewController: RippleViewController {
         super.viewDidAppear(animated)
     }
     func updateTheme() {
-        self.view.backgroundColor = UserDefaults.standard.bool(forKey: nightThemeKey) ? UIColor.rippleNight : UIColor.rippleGrey
+        if let nightTheme = UserDefaults.ripple?.bool(forKey: nightThemeKey), nightTheme == true {
+            self.view.backgroundColor = UIColor.rippleNight
+        } else {
+            self.view.backgroundColor = UIColor.rippleGrey
+        }
     }
     func updateCircleColor() {
-        let color = UserDefaults.standard.colorForKey(key: circleColorKey) ?? UIColor.rippleGreen
+        let color = UserDefaults.ripple?.colorForKey(key: circleColorKey) ?? UIColor.rippleGreen
         self.circleView.layer.borderColor = color.cgColor
         self.dotView.backgroundColor = color
     }
