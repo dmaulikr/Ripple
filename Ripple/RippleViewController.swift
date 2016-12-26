@@ -84,7 +84,7 @@ open class RippleViewController: UIViewController {
     
     func shrinkCircle() {
         Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(hideDotView), userInfo: nil, repeats: false)
-        UIView.animate(withDuration: 5, delay: 1.5, options: [], animations: {
+        UIView.animate(withDuration: 5, delay: 1.5, options: [.allowUserInteraction], animations: {
             self.circleView.transform = self.circleView.transform.scaledBy(x: 1/5, y: 1/5)
         }, completion: { _ in
             Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.start), userInfo: nil, repeats: false)
