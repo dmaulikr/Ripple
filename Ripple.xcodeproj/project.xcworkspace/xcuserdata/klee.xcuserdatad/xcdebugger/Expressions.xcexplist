@@ -3,13 +3,30 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "RippleViewController.start() -&gt; ():RippleViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.bounds.height">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.bounds.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ViewController.configureView() -&gt; ():ViewController.swift">
       </ContextState>
       <ContextState
          contextName = "RippleViewController.configureView() -&gt; ():RippleViewController.swift">
          <PersistentStrings>
             <PersistentString
+               value = "view.bounds.height">
+            </PersistentString>
+            <PersistentString
                value = "view.subviews">
+            </PersistentString>
+            <PersistentString
+               value = "view.bounds.width">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -24,14 +41,6 @@
             </PersistentString>
             <PersistentString
                value = "contentView.bounds">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AppViewController.updateTheme() -&gt; ():AppViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UserDefaults.standard.bool(forKey: nightThemeKey)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

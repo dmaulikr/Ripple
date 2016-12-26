@@ -19,8 +19,16 @@ class TodayViewController: RippleViewController, NCWidgetProviding {
         self.backgroundColor = UIColor.clear
     }
     
+    override func viewDidLoad() {
+        self.preferredContentSize = CGSize(width: 0, height: 110)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        return .zero
     }
     
     override func didReceiveMemoryWarning() {

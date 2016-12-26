@@ -628,6 +628,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Ripple Widget/Ripple Widget.entitlements";
 				DEVELOPMENT_TEAM = QGV37CRU79;
 				INFOPLIST_FILE = "Ripple Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KeithLee.Ripple.Ripple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -642,6 +643,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Ripple Widget/Ripple Widget.entitlements";
 				DEVELOPMENT_TEAM = QGV37CRU79;
 				INFOPLIST_FILE = "Ripple Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KeithLee.Ripple.Ripple;
 				PRODUCT_NAME = "$(TARGET_NAME)";

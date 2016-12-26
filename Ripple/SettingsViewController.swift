@@ -49,7 +49,7 @@ class SettingsViewController: UIViewController {
         colorView3.color = UIColor.rippleBlue
         colorView4.color = UIColor.rippleBeige
         
-        if UserDefaults.standard.bool(forKey: nightThemeKey) {
+        if let nightTheme = UserDefaults.ripple?.bool(forKey: nightThemeKey), nightTheme == true {
             nightThemeSwitch.isOn = true
             view.backgroundColor = UIColor.rippleNight
             self.nightThemeLabel.textColor = UIColor.white

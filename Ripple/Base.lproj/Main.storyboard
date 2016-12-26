@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xaT-0h-8Ot">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +19,7 @@
                         <viewControllerLayoutGuide type="bottom" id="j4r-Xo-CBE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Jq-7L-lzY">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -44,23 +45,35 @@
                         <viewControllerLayoutGuide type="bottom" id="Auu-6Q-mPZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9S5-Er-lW9">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxw-V2-Oqg">
-                                <rect key="frame" x="256" y="116" width="95" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cIU-kF-3B9">
-                                <rect key="frame" x="361" y="111" width="51" height="31"/>
-                                <connections>
-                                    <action selector="toggleNight:" destination="mBK-f6-SnI" eventType="valueChanged" id="SCk-6x-jpB"/>
-                                </connections>
-                            </switch>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKN-yr-6zh">
+                                <rect key="frame" x="16" y="36" width="343" height="173"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxw-V2-Oqg">
+                                        <rect key="frame" x="94" y="76" width="95" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cIU-kF-3B9">
+                                        <rect key="frame" x="199" y="71" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="toggleNight:" destination="mBK-f6-SnI" eventType="valueChanged" id="SCk-6x-jpB"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cIU-kF-3B9" firstAttribute="centerY" secondItem="Rxw-V2-Oqg" secondAttribute="centerY" id="Df2-i8-Txz"/>
+                                    <constraint firstItem="Rxw-V2-Oqg" firstAttribute="centerX" secondItem="cKN-yr-6zh" secondAttribute="centerX" constant="-30" id="Gwk-dj-2ue"/>
+                                    <constraint firstItem="Rxw-V2-Oqg" firstAttribute="centerY" secondItem="cKN-yr-6zh" secondAttribute="centerY" id="Ml3-Xq-LbY"/>
+                                    <constraint firstItem="cIU-kF-3B9" firstAttribute="centerY" secondItem="cKN-yr-6zh" secondAttribute="centerY" id="NCr-Yb-T9l"/>
+                                    <constraint firstItem="cIU-kF-3B9" firstAttribute="leading" secondItem="Rxw-V2-Oqg" secondAttribute="trailing" constant="10" id="t4C-Rv-WRd"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dUV-f8-g32">
-                                <rect key="frame" x="209" y="63" width="250" height="250"/>
+                                <rect key="frame" x="63" y="209" width="250" height="250"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AU0-yp-fxK">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="125"/>
@@ -109,10 +122,10 @@
                         <constraints>
                             <constraint firstItem="dUV-f8-g32" firstAttribute="centerX" secondItem="9S5-Er-lW9" secondAttribute="centerX" id="1TN-ku-9RC"/>
                             <constraint firstItem="dUV-f8-g32" firstAttribute="centerY" secondItem="9S5-Er-lW9" secondAttribute="centerY" id="9Oj-9b-dRW"/>
-                            <constraint firstItem="Rxw-V2-Oqg" firstAttribute="top" secondItem="iHN-Dd-KoC" secondAttribute="bottom" constant="96" id="S2e-Mj-M7C"/>
-                            <constraint firstItem="Rxw-V2-Oqg" firstAttribute="centerX" secondItem="9S5-Er-lW9" secondAttribute="centerX" constant="-30" id="Tdq-eS-VII"/>
-                            <constraint firstItem="cIU-kF-3B9" firstAttribute="leading" secondItem="Rxw-V2-Oqg" secondAttribute="trailing" constant="10" id="ahk-jL-Cys"/>
-                            <constraint firstItem="cIU-kF-3B9" firstAttribute="centerY" secondItem="Rxw-V2-Oqg" secondAttribute="centerY" id="nun-9R-CJa"/>
+                            <constraint firstItem="dUV-f8-g32" firstAttribute="top" secondItem="cKN-yr-6zh" secondAttribute="bottom" id="NOT-uH-tbq"/>
+                            <constraint firstItem="cKN-yr-6zh" firstAttribute="leading" secondItem="9S5-Er-lW9" secondAttribute="leadingMargin" id="Q03-NK-W0J"/>
+                            <constraint firstItem="cKN-yr-6zh" firstAttribute="top" secondItem="iHN-Dd-KoC" secondAttribute="bottom" constant="16" id="bCA-bI-HxF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cKN-yr-6zh" secondAttribute="trailing" id="y7Q-Zh-boe"/>
                         </constraints>
                     </view>
                     <connections>
@@ -127,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0NE-M9-XIW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="680"/>
+            <point key="canvasLocation" x="269.60000000000002" y="679.61019490254876"/>
         </scene>
         <!--App View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -138,7 +151,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99586588144302368" green="1" blue="0.9999271035194397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
