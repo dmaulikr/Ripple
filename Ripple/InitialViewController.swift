@@ -12,9 +12,22 @@ import RippleKit
 class InitialViewController: UIViewController {
 
     var pageViewController: UIPageViewController!
+    let healthManager:HealthManager = HealthManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        healthManager.authorizeHealthKit { (success, error: Error?) in
+            if let error = error {
+                let alertController = UIAlertController.init(title: "error", message: error.localizedDescription, preferredStyle: .alert)
+                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                    // dismiss by default
+                }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+        
         self.pageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
         updateTheme()

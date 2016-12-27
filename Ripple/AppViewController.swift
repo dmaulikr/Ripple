@@ -15,9 +15,11 @@ class AppViewController: RippleViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateCircleColor), name: Notification.Name(circleColorChangedNotificationId), object: nil)
         updateTheme()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
+    
     func updateTheme() {
         if let nightTheme = UserDefaults.ripple?.bool(forKey: nightThemeKey), nightTheme == true {
             self.view.backgroundColor = UIColor.rippleNight

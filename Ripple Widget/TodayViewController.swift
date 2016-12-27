@@ -11,6 +11,9 @@ import NotificationCenter
 import RippleKit
 
 class TodayViewController: RippleViewController, NCWidgetProviding {
+    
+    let healthManager = HealthManager()
+    let startDate = Date()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -29,6 +32,10 @@ class TodayViewController: RippleViewController, NCWidgetProviding {
     
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
         return .zero
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        healthManager.saveMeditation(startDate: startDate)
     }
     
     override func didReceiveMemoryWarning() {

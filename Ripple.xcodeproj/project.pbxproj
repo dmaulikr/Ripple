@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		790B9BE61E0BD5B4001A4FA8 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B9BE51E0BD5B4001A4FA8 /* InitialViewController.swift */; };
 		790B9BE91E0BD8D6001A4FA8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B9BE81E0BD8D6001A4FA8 /* SettingsViewController.swift */; };
+		790D0EB51E11DBDB00FDDCAE /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D0EB41E11DBDB00FDDCAE /* HealthManager.swift */; };
+		790D0EB71E11E0D200FDDCAE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790D0EB61E11E0D200FDDCAE /* HealthKit.framework */; };
 		79429A9C1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79429A9B1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift */; };
 		7983CD641E07CC9D0050C6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983CD631E07CC9D0050C6A3 /* AppDelegate.swift */; };
 		7983CD691E07CC9D0050C6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7983CD671E07CC9D0050C6A3 /* Main.storyboard */; };
@@ -73,6 +75,8 @@
 /* Begin PBXFileReference section */
 		790B9BE51E0BD5B4001A4FA8 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		790B9BE81E0BD8D6001A4FA8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		790D0EB41E11DBDB00FDDCAE /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthManager.swift; path = RippleKit/HealthManager.swift; sourceTree = SOURCE_ROOT; };
+		790D0EB61E11E0D200FDDCAE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		792E92EE1E08CB4D001FDB04 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		79429A9B1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		79429A9D1E0E5DC500D0B9D6 /* Ripple.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ripple.entitlements; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79BAF02A1E0913D60067B85A /* RippleKit.framework in Frameworks */,
+				790D0EB71E11E0D200FDDCAE /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +196,7 @@
 		79BAF0241E0913D60067B85A /* RippleKit */ = {
 			isa = PBXGroup;
 			children = (
+				790D0EB41E11DBDB00FDDCAE /* HealthManager.swift */,
 				792E92ED1E08CB3E001FDB04 /* Extensions */,
 				7983CD651E07CC9D0050C6A3 /* RippleViewController.swift */,
 				79BAF0251E0913D60067B85A /* RippleKit.h */,
@@ -202,6 +208,7 @@
 		79BAF0361E0915770067B85A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				790D0EB61E11E0D200FDDCAE /* HealthKit.framework */,
 				79BAF0371E0915770067B85A /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -306,6 +313,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
 						};
 					};
 					79BAF0221E0913D60067B85A = {
@@ -393,6 +403,7 @@
 				79BAF0481E0A0DB90067B85A /* RippleViewController.swift in Sources */,
 				79BAF0301E09143F0067B85A /* UIColorExtensions.swift in Sources */,
 				79429A9C1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift in Sources */,
+				790D0EB51E11DBDB00FDDCAE /* HealthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
