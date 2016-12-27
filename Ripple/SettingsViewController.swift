@@ -13,9 +13,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var nightThemeLabel: UILabel!
     @IBOutlet weak var nightThemeSwitch: UISwitch!
-    
     @IBOutlet weak var colorChooser: UIStackView!
-    
     @IBOutlet weak var colorView1: DashedCircleView!
     @IBOutlet weak var colorView2: DashedCircleView!
     @IBOutlet weak var colorView3: DashedCircleView!
@@ -59,14 +57,10 @@ class SettingsViewController: UIViewController {
             self.nightThemeLabel.textColor = UIColor.black
         }
         
-        let tapRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(fillCircle))
-        let tapRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(fillCircle))
-        let tapRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(fillCircle))
-        let tapRecognizer4 = UITapGestureRecognizer(target: self, action: #selector(fillCircle))
-        colorView1.addGestureRecognizer(tapRecognizer1)
-        colorView2.addGestureRecognizer(tapRecognizer2)
-        colorView3.addGestureRecognizer(tapRecognizer3)
-        colorView4.addGestureRecognizer(tapRecognizer4)
+        colorViewArray.forEach({
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(fillCircle))
+            $0.addGestureRecognizer(tapRecognizer)
+        })
     }
     
     func fillCircle(sender: UITapGestureRecognizer) {

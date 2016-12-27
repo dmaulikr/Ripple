@@ -13,7 +13,7 @@ open class HealthManager {
     let healthKitStore: HKHealthStore = HKHealthStore()
     
     public init() {
-        
+        //Empty
     }
     
     public func authorizeHealthKit(callback: ((_ success: Bool, _ error: Error?) -> Void)?) {
