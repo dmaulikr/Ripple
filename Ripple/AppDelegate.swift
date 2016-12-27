@@ -14,7 +14,7 @@ import RippleKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var startDate: Date = Date()
+    var startDate: Date!
     let healthManager: HealthManager = HealthManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

@@ -13,7 +13,7 @@ import RippleKit
 class TodayViewController: RippleViewController, NCWidgetProviding {
     
     let healthManager = HealthManager()
-    var startDate: Date = Date()
+    var startDate: Date!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -28,7 +28,6 @@ class TodayViewController: RippleViewController, NCWidgetProviding {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //Sanity check
         startDate = Date()
     }
     
