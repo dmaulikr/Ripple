@@ -13,7 +13,7 @@ import RippleKit
 class TodayViewController: RippleViewController, NCWidgetProviding {
     
     let healthManager = HealthManager()
-    let startDate = Date()
+    var startDate: Date = Date()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -28,6 +28,8 @@ class TodayViewController: RippleViewController, NCWidgetProviding {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //Sanity check
+        startDate = Date()
     }
     
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
