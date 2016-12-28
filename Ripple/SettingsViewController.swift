@@ -8,6 +8,7 @@
 
 import UIKit
 import RippleKit
+import Crashlytics
 
 class SettingsViewController: UIViewController {
 
@@ -75,11 +76,28 @@ class SettingsViewController: UIViewController {
                 $0.setNeedsDisplay()
             }
         })
+        var newColor: String!
+        let index = colorViewArray.index(of: colorView)!
+        switch index {
+        case 0:
+            newColor = "rippleGreen"
+        case 1:
+            newColor = "rippleRed"
+        case 2:
+            newColor = "rippleBlue"
+        case 3:
+            newColor = "rippleBeige"
+        default:
+            newColor = "Error"
+        }
+        
+        Answers.logCustomEvent(withName: "Changed circle color", customAttributes: ["Color": newColor])
         UserDefaults.ripple?.setColor(color: colorView.color, forKey: circleColorKey)
         NotificationCenter.default.post(name: Notification.Name(circleColorChangedNotificationId), object: nil)
     }
     
     @IBAction func toggleNight(_ sender: UISwitch) {
+        Answers.logCustomEvent(withName: "Changed night theme", customAttributes: ["theme": sender.isOn ? "Night" : "Day"])
         UserDefaults.ripple?.set(sender.isOn, forKey: nightThemeKey)
         NotificationCenter.default.post(name: Notification.Name(nightThemeChangedNotificationId), object: nil)
         UIView.animate(withDuration: 0.5) {
