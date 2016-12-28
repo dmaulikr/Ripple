@@ -50,11 +50,11 @@ class SettingsViewController: UIViewController {
         if let nightTheme = UserDefaults.ripple?.bool(forKey: nightThemeKey), nightTheme == true {
             nightThemeSwitch.isOn = true
             view.backgroundColor = UIColor.rippleNight
-            self.nightThemeLabel.textColor = UIColor.white
+            self.nightThemeLabel.textColor = UIColor.rippleGrey
         } else {
             nightThemeSwitch.isOn = false
             view.backgroundColor = UIColor.rippleGrey
-            self.nightThemeLabel.textColor = UIColor.black
+            self.nightThemeLabel.textColor = UIColor.rippleNight
         }
         
         colorViewArray.forEach({
@@ -84,7 +84,7 @@ class SettingsViewController: UIViewController {
         NotificationCenter.default.post(name: Notification.Name(nightThemeChangedNotificationId), object: nil)
         UIView.animate(withDuration: 0.5) {
             self.view.backgroundColor = sender.isOn ? UIColor.rippleNight : UIColor.rippleGrey
-            self.nightThemeLabel.textColor = sender.isOn ? UIColor.white : UIColor.black
+            self.nightThemeLabel.textColor = sender.isOn ? UIColor.rippleGrey : UIColor.rippleNight
         }
     }
     
