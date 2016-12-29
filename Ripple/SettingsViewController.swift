@@ -97,7 +97,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func toggleNight(_ sender: UISwitch) {
-        Answers.logCustomEvent(withName: "Changed night theme", customAttributes: ["theme": sender.isOn ? "Night" : "Day"])
+        Answers.logCustomEvent(withName: "Changed night theme", customAttributes: ["Theme": sender.isOn ? "Night" : "Day"])
         UserDefaults.ripple?.set(sender.isOn, forKey: nightThemeKey)
         NotificationCenter.default.post(name: Notification.Name(nightThemeChangedNotificationId), object: nil)
         UIView.animate(withDuration: 0.5) {

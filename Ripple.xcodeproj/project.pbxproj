@@ -13,6 +13,9 @@
 		790D0EB71E11E0D200FDDCAE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790D0EB61E11E0D200FDDCAE /* HealthKit.framework */; };
 		792609EB1E138DB40076A18E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792609E91E138DB40076A18E /* Fabric.framework */; };
 		792609EC1E138DB40076A18E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792609EA1E138DB40076A18E /* Crashlytics.framework */; };
+		792609F21E14A2450076A18E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792609F01E14A2450076A18E /* Crashlytics.framework */; };
+		792609F31E14A2450076A18E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792609F11E14A2450076A18E /* Fabric.framework */; };
+		792609F51E14A8C10076A18E /* CGColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792609F41E14A8C10076A18E /* CGColorExtensions.swift */; };
 		79429A9C1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79429A9B1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift */; };
 		7983CD641E07CC9D0050C6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983CD631E07CC9D0050C6A3 /* AppDelegate.swift */; };
 		7983CD691E07CC9D0050C6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7983CD671E07CC9D0050C6A3 /* Main.storyboard */; };
@@ -79,8 +82,11 @@
 		790B9BE81E0BD8D6001A4FA8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		790D0EB41E11DBDB00FDDCAE /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthManager.swift; path = RippleKit/HealthManager.swift; sourceTree = SOURCE_ROOT; };
 		790D0EB61E11E0D200FDDCAE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		792609E91E138DB40076A18E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		792609EA1E138DB40076A18E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		792609E91E138DB40076A18E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Ripple/Fabric.framework; sourceTree = "<group>"; };
+		792609EA1E138DB40076A18E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Ripple/Crashlytics.framework; sourceTree = "<group>"; };
+		792609F01E14A2450076A18E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		792609F11E14A2450076A18E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		792609F41E14A8C10076A18E /* CGColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGColorExtensions.swift; sourceTree = "<group>"; };
 		792E92EE1E08CB4D001FDB04 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		79429A9B1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		79429A9D1E0E5DC500D0B9D6 /* Ripple.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ripple.entitlements; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				792609F21E14A2450076A18E /* Crashlytics.framework in Frameworks */,
+				792609F31E14A2450076A18E /* Fabric.framework in Frameworks */,
 				79BAF0471E0915940067B85A /* RippleKit.framework in Frameworks */,
 				79BAF0381E0915770067B85A /* NotificationCenter.framework in Frameworks */,
 			);
@@ -150,6 +158,7 @@
 			children = (
 				792E92EE1E08CB4D001FDB04 /* UIColorExtensions.swift */,
 				79429A9B1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift */,
+				792609F41E14A8C10076A18E /* CGColorExtensions.swift */,
 			);
 			name = Extensions;
 			path = ../Ripple;
@@ -158,6 +167,8 @@
 		7983CD571E07CC9D0050C6A3 = {
 			isa = PBXGroup;
 			children = (
+				792609EA1E138DB40076A18E /* Crashlytics.framework */,
+				792609E91E138DB40076A18E /* Fabric.framework */,
 				7983CD621E07CC9D0050C6A3 /* Ripple */,
 				79BAF0241E0913D60067B85A /* RippleKit */,
 				79BAF0391E0915770067B85A /* Ripple Widget */,
@@ -179,8 +190,6 @@
 		7983CD621E07CC9D0050C6A3 /* Ripple */ = {
 			isa = PBXGroup;
 			children = (
-				792609EA1E138DB40076A18E /* Crashlytics.framework */,
-				792609E91E138DB40076A18E /* Fabric.framework */,
 				79429A9D1E0E5DC500D0B9D6 /* Ripple.entitlements */,
 				7983CD631E07CC9D0050C6A3 /* AppDelegate.swift */,
 				7983CD671E07CC9D0050C6A3 /* Main.storyboard */,
@@ -216,6 +225,8 @@
 		79BAF0361E0915770067B85A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				792609F01E14A2450076A18E /* Crashlytics.framework */,
+				792609F11E14A2450076A18E /* Fabric.framework */,
 				790D0EB61E11E0D200FDDCAE /* HealthKit.framework */,
 				79BAF0371E0915770067B85A /* NotificationCenter.framework */,
 			);
@@ -294,6 +305,7 @@
 				79BAF0311E0915770067B85A /* Sources */,
 				79BAF0321E0915770067B85A /* Frameworks */,
 				79BAF0331E0915770067B85A /* Resources */,
+				792609EF1E14A2070076A18E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -406,6 +418,19 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run f370c1dfa9e12c4c84e57e5c49f9606b7a6c8206 d884ceb181c441dd14d60273af14d112720dc2645590ad3dea87e692d5cd8e59";
 		};
+		792609EF1E14A2070076A18E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -425,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				792609F51E14A8C10076A18E /* CGColorExtensions.swift in Sources */,
 				79BAF0481E0A0DB90067B85A /* RippleViewController.swift in Sources */,
 				79BAF0301E09143F0067B85A /* UIColorExtensions.swift in Sources */,
 				79429A9C1E0E21AA00D0B9D6 /* UserDefaultsExtensions.swift in Sources */,
@@ -671,6 +697,10 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Ripple Widget/Ripple Widget.entitlements";
 				DEVELOPMENT_TEAM = 5K27PD58GS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Ripple Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -686,6 +716,10 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Ripple Widget/Ripple Widget.entitlements";
 				DEVELOPMENT_TEAM = 5K27PD58GS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Ripple Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
