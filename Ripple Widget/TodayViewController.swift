@@ -35,10 +35,6 @@ class TodayViewController: RippleViewController, NCWidgetProviding {
         return .zero
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        healthManager.saveMeditation(startDate: startDate)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
