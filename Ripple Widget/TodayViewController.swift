@@ -12,9 +12,6 @@ import RippleKit
 
 class TodayViewController: RippleViewController, NCWidgetProviding {
     
-    let healthManager = HealthManager()
-    var startDate: Date!
-
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.circleSize = 20
@@ -28,7 +25,6 @@ class TodayViewController: RippleViewController, NCWidgetProviding {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        startDate = Date()
     }
     
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
